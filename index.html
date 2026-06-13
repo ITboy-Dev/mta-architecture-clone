@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MTA:: &ndash; Architecture, Interior Design</title>
+    <meta name="description" content="M.T Architects - Distinctive Architecture Design, Interior Design, Landscape Design & Urban Design. Over 700 successful projects in Egypt & abroad.">
+    <meta name="robots" content="max-image-preview:large">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&family=Muli:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== Loader ===== -->
+    <div id="monolit-loader" class="loader">
+        <div id="movingBallG">
+            <div class="movingBallLineG"></div>
+            <div id="movingBallG_1" class="movingBallG"></div>
+        </div>
+    </div>
+
+    <!-- ===== Main Theme ===== -->
+    <div id="main-theme">
+
+        <!-- ===== Header ===== -->
+        <header class="monolit-header" id="site-header">
+            <div class="header-inner">
+                <!-- Logo -->
+                <div class="logo-holder">
+                    <a href="#">
+                        <img src="https://m-talaat.com/wp-content/uploads/2020/10/MTALogoW-2.png" class="monolit-logo" alt="MTA::">
+                    </a>
+                </div>
+
+                <!-- Mobile Nav Button -->
+                <div class="nav-button-holder">
+                    <div class="nav-button" id="nav-toggle">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="nav-holder" id="nav-holder">
+                    <nav>
+                        <ul class="monolit_main-nav">
+                            <li><a href="#" class="act-link">Home</a></li>
+                            <li><a href="#sec1">About Us</a></li>
+                            <li class="has-submenu">
+                                <a href="#sec3">Projects</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                    <li><a href="#">INTERIOR DESIGN</a></li>
+                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                    <li><a href="#">URBAN DESIGN</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">News &amp; Events</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#contact-footer">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Share Button -->
+                <div class="show-share" id="shareToggle">
+                    <i class="fa fa-share-alt"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== Wrapper ===== -->
+        <div id="wrapper">
+            <div class="content-holder">
+
+                <div class="dynamic-title"><h1>MT ARCHITECTS</h1></div>
+
+                <!-- ========== HERO FULL HEIGHT SLIDER ========== -->
+                <div class="monolit_sec monolit_fulh_sec content full-height no-bg-con">
+                    <div class="hero-wrap hero-wrap-home-slider">
+                        <div class="hero-slider" id="heroSlider">
+                            <!-- Slide 1 -->
+                            <div class="hero-slide active" data-index="0">
+                                <div class="overlay"></div>
+                                <div class="bg" style="background-image: url('images/hero1.png')"></div>
+                                <div class="hero-wrap-item center-item">
+                                    <h3>Distinctive</h3>
+                                    <h2>Architecture Design</h2>
+                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="hero-slide" data-index="1">
+                                <div class="overlay"></div>
+                                <div class="bg" style="background-image: url('images/hero2.png')"></div>
+                                <div class="hero-wrap-item center-item">
+                                    <h3>unique &amp; memorable</h3>
+                                    <h2>spaces</h2>
+                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="hero-slide" data-index="2">
+                                <div class="overlay"></div>
+                                <div class="bg" style="background-image: url('images/hero3.png')"></div>
+                                <div class="hero-wrap-item center-item">
+                                    <h3>the highest standards of</h3>
+                                    <h2>excellence</h2>
+                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                </div>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="hero-slide" data-index="3">
+                                <div class="overlay"></div>
+                                <div class="bg" style="background-image: url('images/hero4.png')"></div>
+                                <div class="hero-wrap-item center-item">
+                                    <h3>contemplative</h3>
+                                    <h2>interiors</h2>
+                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                </div>
+                            </div>
+                            <!-- Slide 5 -->
+                            <div class="hero-slide" data-index="4">
+                                <div class="overlay"></div>
+                                <div class="bg" style="background-image: url('images/hero5.png')"></div>
+                                <div class="hero-wrap-item center-item">
+                                    <h3>when your dream</h3>
+                                    <h2>come true</h2>
+                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slider Controls -->
+                        <div class="customNavigation fhsln">
+                            <a class="prev-slide transition" id="prevSlide"><i class="fa fa-angle-left"></i></a>
+                            <a class="next-slide transition" id="nextSlide"><i class="fa fa-angle-right"></i></a>
+                        </div>
+
+                        <!-- Dots -->
+                        <div class="slider-dots" id="sliderDots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                            <span class="dot" data-index="4"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== SECTION 01 - OUR VISION ========== -->
+                <div id="sec1" class="monolit_sec monolit_page_sec content">
+                    <section>
+                        <div class="sect-subtitle right-align-dec">
+                            <span>01</span>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="parallax-box slider-box">
+                                        <div class="single-slider-holder">
+                                            <img src="images/vision.png" class="respimg" alt="Our Vision">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="wpb_wrapper">
+                                        <h2 class="section-title">Our <strong>Vision</strong></h2>
+                                        <p class="no-rep">We, at M.T Architects, believe that architecture of any type or scale should generate through public experience, whether they work or live in them, visit them, or even if they just encounter them in passing. So, for us every project is a new challenge that we approach from that vision in order to discover the most distinguished &amp; optimum solutions. Our greatest satisfaction comes from designing buildings and spaces that are memorable, unique &amp; leaves a true impact upon those who uses them.</p>
+                                        <p class="no-rep">Involving our clients in the design process allows us to explore and define their needs in order to form them in creative yet practical solutions. We pride ourselves on offering our clients certainty and confidence in combining aesthetic and operational requirements to create the harmonious complete results that they expect. And we always seek to achieve the highest standards of excellence in interior &amp; exterior implementation.</p>
+
+                                        <div class="process-box">
+                                            <h3>Our process</h3>
+                                            <ul class="creat-list">
+                                                <li><a href="#">Idea &amp; Start</a></li>
+                                                <li><a href="#">Design &amp; Create</a></li>
+                                                <li><a href="#">Build &amp; Finish</a></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <a class="btn anim-button fl-l" href="#sec3">
+                                                <span class="no-rep">View Our portfolio</span>
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ========== SECTION 02 - INTERESTING FACTS ========== -->
+                <div class="monolit_sec monolit_page_sec content dark-bg" id="sec2">
+                    <div class="parallax-inner">
+                        <div class="bg" style="background-image: url('images/hero3.png')"></div>
+                        <div class="overlay" style="opacity:0.8;"></div>
+                    </div>
+                    <section>
+                        <div class="sect-subtitle left-align-dec">
+                            <span>02</span>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h2 class="section-title">Some Interesting <strong>Facts</strong></h2>
+                                </div>
+                                <div class="col-md-8">
+                                    <p>More than 700 complete successful projects in Egypt &amp; abroad &hellip;. and counting.</p>
+                                    <p class="no-rep">Our team takes over everything, from an idea and concept development to realization. We believe in traditions and incorporate them into our innovations. All our projects incorporate a unique artistic image and functional solutions. The client is the soul of the project. Our main goal is to illustrate his/her values and individuality through design.</p>
+                                </div>
+                            </div>
+                            <div class="row facts-row">
+                                <div class="col-md-4"></div>
+                                <div class="inline-facts-holder col-md-8">
+                                    <div class="inline-facts">
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-target="350">0</div>
+                                            </div>
+                                        </div>
+                                        <h6>Residential projects</h6>
+                                    </div>
+                                    <div class="inline-facts" data-parallax-y="80">
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-target="200">0</div>
+                                            </div>
+                                        </div>
+                                        <h6>Commercial Projects</h6>
+                                    </div>
+                                    <div class="inline-facts" data-parallax-y="100">
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-target="222">0</div>
+                                            </div>
+                                        </div>
+                                        <h6>Various buildings</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ========== SECTION 03 - FEATURED WORKS ========== -->
+                <div class="monolit_sec monolit_page_sec content" id="sec3">
+                    <section>
+                        <div class="sect-subtitle right-align-dec">
+                            <span>03</span>
+                        </div>
+                        <div class="container">
+                            <h2 class="section-title algn-right dec-title">
+                                <span class="no-rep">Our featured <strong>Works</strong></span>
+                            </h2>
+
+                            <div class="portfolios_parallax-element">
+
+                                <!-- Project 1 - Left -->
+                                <div class="row portfolio-item">
+                                    <div class="col-md-7">
+                                        <div class="parallax-item left-direction">
+                                            <div class="paralax-media">
+                                                <ul class="creat-list">
+                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#">INTERIOR DESIGN</a></li>
+                                                </ul>
+                                                <div class="paralax-wrap">
+                                                    <img src="images/portfolio1.png" class="respimg" alt="Caffè Vergnano" data-lightbox="true" data-title="Caffè Vergnano" data-category="Architecture & Interior Design">
+                                                </div>
+                                            </div>
+                                            <div class="parallax-deck">
+                                                <div class="parallax-deck-item">
+                                                    <h3 class="folio-title">Caffè Vergnano</h3>
+                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5"></div>
+                                </div>
+
+                                <!-- Project 2 - Right -->
+                                <div class="row portfolio-item">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-7">
+                                        <div class="parallax-item right-direction">
+                                            <div class="paralax-media">
+                                                <ul class="creat-list">
+                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                                </ul>
+                                                <div class="paralax-wrap">
+                                                    <img src="images/portfolio2.png" class="respimg" alt="AER Mall" data-lightbox="true" data-title="AER Mall" data-category="Architecture Design">
+                                                </div>
+                                            </div>
+                                            <div class="parallax-deck">
+                                                <div class="parallax-deck-item">
+                                                    <h3 class="folio-title">AER Mall</h3>
+                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 3 - Left -->
+                                <div class="row portfolio-item">
+                                    <div class="col-md-7">
+                                        <div class="parallax-item left-direction">
+                                            <div class="paralax-media">
+                                                <ul class="creat-list">
+                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                                </ul>
+                                                <div class="paralax-wrap">
+                                                    <img src="images/portfolio3.png" class="respimg" alt="Hayat Plaza" data-lightbox="true" data-title="Hayat Plaza" data-category="Architecture & Landscape Design">
+                                                </div>
+                                            </div>
+                                            <div class="parallax-deck">
+                                                <div class="parallax-deck-item">
+                                                    <h3 class="folio-title">Hayat Plaza</h3>
+                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5"></div>
+                                </div>
+
+                                <!-- Project 4 - Right -->
+                                <div class="row portfolio-item">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-7">
+                                        <div class="parallax-item right-direction">
+                                            <div class="paralax-media">
+                                                <ul class="creat-list">
+                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#">INTERIOR DESIGN</a></li>
+                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                                    <li><a href="#">URBAN DESIGN</a></li>
+                                                </ul>
+                                                <div class="paralax-wrap">
+                                                    <img src="images/portfolio4.png" class="respimg" alt="Waterfall Compound" data-lightbox="true" data-title="Waterfall Compound Project" data-category="Architecture, Interior, Landscape & Urban Design">
+                                                </div>
+                                            </div>
+                                            <div class="parallax-deck">
+                                                <div class="parallax-deck-item">
+                                                    <h3 class="folio-title">Waterfall Compound Project</h3>
+                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Project 5 - Left -->
+                                <div class="row portfolio-item">
+                                    <div class="col-md-7">
+                                        <div class="parallax-item left-direction">
+                                            <div class="paralax-media">
+                                                <ul class="creat-list">
+                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                                </ul>
+                                                <div class="paralax-wrap">
+                                                    <img src="images/portfolio5.png" class="respimg" alt="Opal Project" data-lightbox="true" data-title="Opal Project" data-category="Architecture & Landscape Design">
+                                                </div>
+                                            </div>
+                                            <div class="parallax-deck">
+                                                <div class="parallax-deck-item">
+                                                    <h3 class="folio-title">Opal Project</h3>
+                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5"></div>
+                                </div>
+
+                                <!-- Project 6 - Right -->
+                                <div class="row portfolio-item">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-7">
+                                        <div class="parallax-item right-direction">
+                                            <div class="paralax-media">
+                                                <ul class="creat-list">
+                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                                </ul>
+                                                <div class="paralax-wrap">
+                                                    <img src="images/portfolio6.png" class="respimg" alt="Box Park" data-lightbox="true" data-title="Box Park" data-category="Architecture & Landscape Design">
+                                                </div>
+                                            </div>
+                                            <div class="parallax-deck">
+                                                <div class="parallax-deck-item">
+                                                    <h3 class="folio-title">Box Park</h3>
+                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- View All Projects -->
+                                <div class="custom-link-holder">
+                                    <a href="#" class="btn anim-button"><span>View All Projects</span><i class="fa fa-long-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+            <!-- content-holder end -->
+
+            <!-- ========== CONTENT FOOTER (Exact Clone) ========== -->
+            <div class="height-emulator"></div>
+            <footer class="content-footer" id="contact-footer">
+                <div class="container">
+                    <div class="row footer-widgets-holder"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-item footer-logo">
+                                <a href="#">
+                                    <img src="https://m-talaat.com/wp-content/uploads/2020/07/MTALogoW.png" alt="M-Talaat-Architect">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-item">
+                                <h4 class="text-link">Call</h4>
+                                <ul>
+                                    <li><a href="tel:+20201151115111">(202) 0115 111 5111</a></li>
+                                    <li><a href="tel:+20228140001">(202) 281 40001</a></li>
+                                    <li><a href="tel:+20228140210">(202) 281 40210</a></li>
+                                    <li><a href="tel:+966507027111">(966) 50 702 7111</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-item">
+                                <h4 class="text-link">Write</h4>
+                                <ul>
+                                    <li><a href="mailto:info@m-talaat.com">info@m-talaat.com</a></li>
+                                    <li><a href="mailto:mt@m-talaat.com">mt@m-talaat.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-item">
+                                <h4 class="text-link">Visit</h4>
+                                <ul>
+                                    <li><span>167 Northern 90st, jasmine 7, New Cairo, Egypt</span></li>
+                                    <li><a href="https://www.google.com.eg/maps/dir/30.11143,31.314129/mt+architects/@30.0643963,31.3086077,12z" target="_blank">View on map</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons Row -->
+                    <div class="footer-social-row">
+                        <a href="https://www.facebook.com/mohamedtalaatarchitects/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://eg.linkedin.com/company/m-t-architects" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                        <a href="https://www.instagram.com/mohamedtalaatarchitects/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCWduLEDWXtH9hVk3QfeUI7Q" target="_blank"><i class="fa fa-youtube"></i></a>
+                    </div>
+
+                    <!-- Copyright Row -->
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                            <div class="footer-wrap">
+                                <span class="copyright">&copy; M.T.Architects 2025. Design by. <a href="http://inspiregraphic.com/" target="_blank">InspireGraphic</a></span>
+                                <span class="to-top" id="toTop">To Top</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <canvas class="particular footer-canvas" id="footerCanvas"></canvas>
+            </footer>
+        </div>
+        <!-- wrapper end -->
+
+        <!-- ===== Fixed Footer (Left side social) ===== -->
+        <footer class="fixed-footer monolit-footer">
+            <div class="footer-social">
+                <ul>
+                    <li><a href="https://www.facebook.com/mohamedtalaatarchitects/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://eg.linkedin.com/company/m-t-architects" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a href="https://www.instagram.com/mohamedtalaatarchitects/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCWduLEDWXtH9hVk3QfeUI7Q" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+    <!-- main-theme end -->
+
+    <!-- ========== LIGHTBOX MODAL ========== -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-container">
+            <button class="lightbox-close" id="lightboxClose"><i class="fa fa-times"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightboxImage">
+                <div class="lightbox-info">
+                    <h3 id="lightboxTitle"></h3>
+                    <p id="lightboxCategory"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== QUICK INQUIRY MODAL ========== -->
+    <div class="inquiry-overlay" id="inquiryOverlay">
+        <div class="inquiry-modal">
+            <button class="inquiry-close" id="inquiryClose"><i class="fa fa-times"></i></button>
+            <div class="inquiry-header">
+                <h3>Request a Consultation</h3>
+                <p>Fill in your details and we'll get back to you within 24 hours</p>
+            </div>
+            <form class="inquiry-form" id="inquiryForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="inqName" placeholder="Your Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="inqEmail" placeholder="Your Email *" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="inqPhone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select id="inqService">
+                            <option value="">Select Service</option>
+                            <option value="architecture">Architecture Design</option>
+                            <option value="interior">Interior Design</option>
+                            <option value="landscape">Landscape Design</option>
+                            <option value="urban">Urban Design</option>
+                            <option value="consultation">General Consultation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <textarea id="inqMessage" placeholder="Tell us about your project..." rows="4"></textarea>
+                </div>
+                <button type="submit" class="inquiry-submit">
+                    <span>Send Request</span>
+                    <i class="fa fa-long-arrow-right"></i>
+                </button>
+            </form>
+            <div class="inquiry-success" id="inquirySuccess" style="display:none;">
+                <i class="fa fa-check-circle"></i>
+                <h3>Thank You!</h3>
+                <p>Your consultation request has been received. Our team will contact you within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== QUICK ACTIONS DOCK ========== -->
+    <div class="quick-actions-dock">
+        <!-- Consultation Button -->
+        <div class="dock-item consultation" id="consultationBtn">
+            <button title="Request Consultation" id="openInquiry">
+                <i class="fa fa-calendar-check-o"></i>
+            </button>
+            <span class="dock-tooltip">Book Consultation</span>
+        </div>
+
+        <!-- WhatsApp Button -->
+        <div class="dock-item whatsapp" id="whatsappBtn">
+            <a href="https://wa.me/20201151115111?text=Hello%20MTA%2C%20I%27m%20interested%20in%20your%20architecture%20services" target="_blank" title="Chat on WhatsApp">
+                <i class="fa fa-whatsapp"></i>
+            </a>
+            <span class="dock-tooltip">WhatsApp Chat</span>
+        </div>
+
+        <!-- Chatbot Toggle Button -->
+        <div class="dock-item chatbot-toggle-wrapper">
+            <div class="chatbot-toggle" id="chatbotToggle">
+                <div class="chatbot-toggle-icon">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="chatbot-toggle-close" style="display:none;">
+                    <i class="fa fa-times"></i>
+                </div>
+                <span class="chatbot-badge" id="chatBadge">1</span>
+            </div>
+            <span class="dock-tooltip">AI Assistant</span>
+        </div>
+    </div>
+
+    <!-- ========== CHATBOT WINDOW ========== -->
+    <div class="chatbot-widget" id="chatbotWidget">
+
+        <!-- Chat Window -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <!-- Chat Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-header-avatar">
+                    <img src="https://m-talaat.com/wp-content/uploads/2020/10/MTALogoW-2.png" alt="MTA">
+                </div>
+                <div class="chatbot-header-info">
+                    <h4>MTA Assistant</h4>
+                    <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                </div>
+                <button class="chatbot-minimize" id="chatbotMinimize"><i class="fa fa-minus"></i></button>
+            </div>
+
+            <!-- Chat Body -->
+            <div class="chatbot-body" id="chatbotBody">
+                <!-- Messages will be injected here -->
+            </div>
+
+            <!-- Quick Replies -->
+            <div class="chatbot-quick-replies" id="quickReplies">
+                <!-- Quick reply buttons injected by JS -->
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." autocomplete="off">
+                <button id="chatbotSend"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
