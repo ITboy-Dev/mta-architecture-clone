@@ -576,12 +576,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const isCurrentlyArabic = btn.dataset.lang === 'ar';
         if (isCurrentlyArabic) {
             bubble.innerHTML = parseMarkdown(engText);
-            btn.textContent = window.currentLang === 'ar' ? 'Translate to Arabic' : 'Translate to Arabic';
+            btn.textContent = 'Translate to Arabic';
             btn.dataset.lang = 'en';
-            btn.style.display = 'none'; // Only allow translate to Arabic for now as per requirements
         } else {
             bubble.innerHTML = parseMarkdown(arText);
-            btn.textContent = window.currentLang === 'ar' ? 'Translate to English' : 'Translate to English';
+            btn.textContent = 'Translate to English';
             btn.dataset.lang = 'ar';
         }
     }
@@ -619,28 +618,12 @@ document.addEventListener('DOMContentLoaded', function () {
         chatBody.appendChild(msgDiv);
 
         if (sender === 'bot') {
-            // Typing effect
-            let i = 0;
-            const parsedHTML = parseMarkdown(text);
-            // Quick typing for HTML (not perfect char-by-char for tags, but simulates flow by dumping)
-            // For a true typing effect, we'll just set it all at once with a fade, or simulate it.
-            // Let's do a simple interval based typing effect for plain text, or just inject HTML in chunks.
-            // To prevent breaking HTML tags, we'll use a fast timeout and set innerHTML directly after typing finishes.
-            // But the user requested a standard typing effect.
-            
-            // Simplified Typing Effect
             textContent.innerHTML = '';
             let currentText = '';
             let charIndex = 0;
-            let tempDiv = document.createElement('div');
-            tempDiv.innerHTML = parsedHTML;
-            let fullText = tempDiv.textContent; // Plain text length
+            const parsedHTML = parseMarkdown(text);
             
-            // To make it look like typing without breaking HTML, we can gradually reveal opacity, or just use innerHTML with a fast delay.
-            // Let's use a character slicing approach over the raw text if no HTML, but we have HTML.
-            // Best approach: Just reveal it character by character over the innerHTML string very fast, but ensuring tags don't break.
-            // Easier: just type it out, but if it encounters '<', skip to '>'.
-            
+            // Proper typing effect
             const typeWriter = setInterval(() => {
                 if (charIndex < parsedHTML.length) {
                     if (parsedHTML[charIndex] === '<') {
@@ -653,22 +636,24 @@ document.addEventListener('DOMContentLoaded', function () {
                         currentText += parsedHTML[charIndex];
                         charIndex++;
                     }
-                    textContent.innerHTML = currentText;
+                    // Add a blinking cursor while typing
+                    textContent.innerHTML = currentText + '<span style="border-right: 2px solid #c19b76; animation: blink 1s step-end infinite;"></span>';
                     chatBody.scrollTop = chatBody.scrollHeight;
                 } else {
                     clearInterval(typeWriter);
-                    // Add translate button after typing finishes
-                    if (isBotResponse && window.currentLang === 'en' && rawAr) {
+                    textContent.innerHTML = currentText; // Remove cursor
+                    
+                    // Always add translate button for bot messages
+                    if (isBotResponse && rawEn && rawAr) {
                         const tBtn = document.createElement('button');
                         tBtn.className = 'chat-translate-btn';
-                        tBtn.textContent = 'Translate to Arabic';
-                        tBtn.dataset.lang = 'en';
+                        tBtn.textContent = window.currentLang === 'ar' ? 'Translate to English' : 'Translate to Arabic';
+                        tBtn.dataset.lang = window.currentLang === 'ar' ? 'ar' : 'en';
                         tBtn.onclick = function() { window.translateChat(this, rawEn, rawAr); };
                         bubble.appendChild(tBtn);
                     }
                 }
-            }, 10); // 10ms per char
-            
+            }, 30); // 30ms per char for a proper visible typing effect
         } else {
             textContent.innerHTML = parseMarkdown(text);
             chatBody.scrollTop = chatBody.scrollHeight;

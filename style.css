@@ -1877,127 +1877,6 @@ p { margin-bottom: 18px; }
 }
 
 
-/* ===================================================
-   NEW FEATURE: BILINGUAL SUPPORT & RTL MODE
-   =================================================== */
-.lang-switch {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: #c19b76;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(193, 155, 118, 0.3);
-    margin-right: 15px;
-    z-index: 50;
-}
-.lang-switch:hover {
-    background: rgba(193, 155, 118, 0.2);
-    box-shadow: 0 0 10px rgba(193, 155, 118, 0.4);
-}
-
-/* Ask AI Button */
-.ask-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: rgba(30, 215, 96, 0.15);
-    border: 1px solid #1ed760;
-    color: #1ed760;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-.ask-btn:hover {
-    background: #1ed760;
-    color: #fff;
-    box-shadow: 0 0 15px rgba(30, 215, 96, 0.4);
-}
-.rtl-mode .ask-btn {
-    margin-left: 0;
-    margin-right: 10px;
-}
-
-/* Chatbot Translate Button */
-.chat-translate-btn {
-    font-size: 11px;
-    color: #c19b76;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    margin-top: 5px;
-    display: block;
-    text-align: right;
-    width: 100%;
-}
-.chat-translate-btn:hover {
-    text-decoration: underline;
-}
-
-/* RTL MODE */
-body.rtl-mode {
-    font-family: 'Cairo', 'Roboto', sans-serif; /* Fallback */
-}
-.rtl-mode .header-inner {
-    flex-direction: row-reverse;
-}
-.rtl-mode .nav-holder {
-    justify-content: flex-start;
-}
-.rtl-mode .monolit_main-nav {
-    flex-direction: row-reverse;
-}
-.rtl-mode .show-share {
-    margin-left: 15px;
-    margin-right: 0;
-}
-.rtl-mode .lang-switch {
-    margin-left: 15px;
-    margin-right: 0;
-}
-.rtl-mode .sect-subtitle.right-align-dec {
-    right: auto;
-    left: 4%;
-}
-.rtl-mode .sect-subtitle.left-align-dec {
-    left: auto;
-    right: 4%;
-}
-.rtl-mode .algn-right {
-    text-align: left;
-}
-.rtl-mode .parallax-item.left-direction {
-    padding-left: 0;
-    padding-right: 40px;
-}
-.rtl-mode .parallax-item.right-direction {
-    padding-right: 0;
-    padding-left: 40px;
-}
-.rtl-mode .btn i {
-    transform: scaleX(-1);
-    margin-left: 0;
-    margin-right: 15px;
-}
-.rtl-mode .chat-bubble {
-    text-align: right;
-}
-.rtl-mode .chat-message {
-    flex-direction: row-reverse;
-}
-.rtl-mode .chat-avatar {
-    margin-right: 0;
-    margin-left: 10px;
-
 
 /* ===================================================
    NEW FEATURE: BILINGUAL SUPPORT & RTL MODE
@@ -2103,16 +1982,7 @@ body.rtl-mode {
     margin-left: 15px;
     margin-right: 0;
 }
-@media only screen and (max-width: 1036px) {
-    .rtl-mode .lang-switch {
-        margin-left: 60px; /* clear the absolute menu button in RTL */
-        margin-right: 0;
-    }
-    .rtl-mode .nav-button-holder {
-        right: auto;
-        left: 30px;
-    }
-}
+
 .rtl-mode .sect-subtitle.right-align-dec {
     right: auto;
     left: 4%;
@@ -2175,3 +2045,70 @@ body.rtl-mode {
     background: rgba(0,0,0,0.5);
     padding: 5px 0;
 }
+
+/* ===================================================
+   MOBILE HEADER AND NAVIGATION CORRECTIONS (LTR/RTL)
+   =================================================== */
+@media only screen and (max-width: 1036px) {
+    /* 1. Reset any layout/overlap overrides on lang-switch */
+    .lang-switch {
+        margin: 0 !important;
+    }
+    
+    /* 2. Absolute center the logo */
+    .logo-holder {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        z-index: 21;
+    }
+
+    /* 3. Position the Language switcher on the left */
+    .header-inner .lang-switch {
+        position: absolute !important;
+        left: 30px !important;
+        right: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        margin: 0 !important;
+        z-index: 50;
+    }
+
+    /* 4. Position the Mobile Hamburger Menu on the right (Same for English & Arabic) */
+    .nav-button-holder {
+        position: absolute !important;
+        right: 30px !important;
+        left: auto !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        display: block !important;
+        z-index: 25;
+    }
+
+    /* 5. Force vertical centering layout inside the Arabic menu drawer (same as English) */
+    .rtl-mode .nav-holder {
+        justify-content: center !important;
+    }
+    .rtl-mode .monolit_main-nav {
+        flex-direction: column !important;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    /* Adjust control margins on very small screens */
+    .header-inner .lang-switch {
+        left: 15px !important;
+        right: auto !important;
+    }
+    .nav-button-holder {
+        right: 15px !important;
+        left: auto !important;
+    }
+    .logo-holder {
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+}
+
