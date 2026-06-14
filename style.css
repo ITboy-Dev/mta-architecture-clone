@@ -1054,19 +1054,30 @@ p { margin-bottom: 18px; }
 }
 
 .lightbox-close {
-    position: absolute;
-    top: -50px;
-    right: 0;
-    background: none;
-    border: none;
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    background: rgba(0,0,0,0.6);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.2);
     color: #fff;
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
-    transition: color 0.3s;
-    z-index: 5;
+    transition: all 0.3s;
+    z-index: 99999;
 }
 
-.lightbox-close:hover { color: #c19b76; }
+.lightbox-close:hover { 
+    background: #c19b76;
+    border-color: #c19b76;
+    color: #fff;
+    transform: rotate(90deg);
+}
 
 .lightbox-content {
     position: relative;
@@ -1859,4 +1870,294 @@ p { margin-bottom: 18px; }
 
     .inquiry-modal { padding: 30px 20px; }
     .form-row { flex-direction: column; gap: 10px; }
+}
+
+
+/* ===================================================
+   NEW FEATURE: BILINGUAL SUPPORT & RTL MODE
+   =================================================== */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #c19b76;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(193, 155, 118, 0.3);
+    margin-right: 15px;
+    z-index: 50;
+}
+.lang-switch:hover {
+    background: rgba(193, 155, 118, 0.2);
+    box-shadow: 0 0 10px rgba(193, 155, 118, 0.4);
+}
+
+/* Ask AI Button */
+.ask-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(30, 215, 96, 0.15);
+    border: 1px solid #1ed760;
+    color: #1ed760;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+.ask-btn:hover {
+    background: #1ed760;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(30, 215, 96, 0.4);
+}
+.rtl-mode .ask-btn {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* Chatbot Translate Button */
+.chat-translate-btn {
+    font-size: 11px;
+    color: #c19b76;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+.chat-translate-btn:hover {
+    text-decoration: underline;
+}
+
+/* RTL MODE */
+body.rtl-mode {
+    font-family: 'Cairo', 'Roboto', sans-serif; /* Fallback */
+}
+.rtl-mode .header-inner {
+    flex-direction: row-reverse;
+}
+.rtl-mode .nav-holder {
+    justify-content: flex-start;
+}
+.rtl-mode .monolit_main-nav {
+    flex-direction: row-reverse;
+}
+.rtl-mode .show-share {
+    margin-left: 15px;
+    margin-right: 0;
+}
+.rtl-mode .lang-switch {
+    margin-left: 15px;
+    margin-right: 0;
+}
+.rtl-mode .sect-subtitle.right-align-dec {
+    right: auto;
+    left: 4%;
+}
+.rtl-mode .sect-subtitle.left-align-dec {
+    left: auto;
+    right: 4%;
+}
+.rtl-mode .algn-right {
+    text-align: left;
+}
+.rtl-mode .parallax-item.left-direction {
+    padding-left: 0;
+    padding-right: 40px;
+}
+.rtl-mode .parallax-item.right-direction {
+    padding-right: 0;
+    padding-left: 40px;
+}
+.rtl-mode .btn i {
+    transform: scaleX(-1);
+    margin-left: 0;
+    margin-right: 15px;
+}
+.rtl-mode .chat-bubble {
+    text-align: right;
+}
+.rtl-mode .chat-message {
+    flex-direction: row-reverse;
+}
+.rtl-mode .chat-avatar {
+    margin-right: 0;
+    margin-left: 10px;
+
+
+/* ===================================================
+   NEW FEATURE: BILINGUAL SUPPORT & RTL MODE
+   =================================================== */
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #c19b76;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(193, 155, 118, 0.3);
+    margin-right: 15px;
+    z-index: 50;
+}
+.lang-switch:hover {
+    background: rgba(193, 155, 118, 0.2);
+    box-shadow: 0 0 10px rgba(193, 155, 118, 0.4);
+}
+
+/* Ask AI Button */
+.ask-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(30, 215, 96, 0.15);
+    border: 1px solid #1ed760;
+    color: #1ed760;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+.ask-btn:hover {
+    background: #1ed760;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(30, 215, 96, 0.4);
+}
+.rtl-mode .ask-btn {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* Chatbot Translate Button */
+.chat-translate-btn {
+    font-size: 11px;
+    color: #c19b76;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+.chat-translate-btn:hover {
+    text-decoration: underline;
+}
+
+/* Lightbox Close Button */
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+/* RTL MODE */
+body.rtl-mode {
+    font-family: 'Cairo', 'Roboto', sans-serif; /* Fallback */
+}
+.rtl-mode .header-inner {
+    flex-direction: row-reverse;
+}
+.rtl-mode .nav-holder {
+    justify-content: flex-start;
+}
+.rtl-mode .monolit_main-nav {
+    flex-direction: row-reverse;
+}
+.rtl-mode .show-share {
+    margin-left: 15px;
+    margin-right: 0;
+}
+.rtl-mode .lang-switch {
+    margin-left: 15px;
+    margin-right: 0;
+}
+.rtl-mode .sect-subtitle.right-align-dec {
+    right: auto;
+    left: 4%;
+}
+.rtl-mode .sect-subtitle.left-align-dec {
+    left: auto;
+    right: 4%;
+}
+.rtl-mode .algn-right {
+    text-align: left;
+}
+.rtl-mode .parallax-item.left-direction {
+    padding-left: 0;
+    padding-right: 40px;
+}
+.rtl-mode .parallax-item.right-direction {
+    padding-right: 0;
+    padding-left: 40px;
+}
+.rtl-mode .btn i {
+    transform: scaleX(-1);
+    margin-left: 0;
+    margin-right: 15px;
+}
+.rtl-mode .chat-bubble {
+    text-align: right;
+}
+.rtl-mode .chat-message {
+    flex-direction: row-reverse;
+}
+.rtl-mode .chat-avatar {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.rtl-mode .chat-time {
+    right: auto;
+    left: 10px;
+}
+
+.rtl-mode .chatbot-header-info {
+    text-align: right;
+}
+.rtl-mode .chat-translate-btn {
+    text-align: left;
+}
+
+/* Image Watermark */
+.image-watermark {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 5;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 0;
 }

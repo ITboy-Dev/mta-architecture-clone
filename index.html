@@ -51,25 +51,29 @@
                 <div class="nav-holder" id="nav-holder">
                     <nav>
                         <ul class="monolit_main-nav">
-                            <li><a href="#" class="act-link">Home</a></li>
-                            <li><a href="#sec1">About Us</a></li>
+                            <li><a href="#" class="act-link" data-i18n="nav_home">Home</a></li>
+                            <li><a href="#sec1" data-i18n="nav_about">About Us</a></li>
                             <li class="has-submenu">
-                                <a href="#sec3">Projects</a>
+                                <a href="#sec3" data-i18n="nav_projects">Projects</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
-                                    <li><a href="#">INTERIOR DESIGN</a></li>
-                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
-                                    <li><a href="#">URBAN DESIGN</a></li>
+                                    <li><a href="#" data-i18n="nav_arch">ARCHITECTURE DESIGN</a></li>
+                                    <li><a href="#" data-i18n="nav_interior">INTERIOR DESIGN</a></li>
+                                    <li><a href="#" data-i18n="nav_landscape">LANDSCAPE DESIGN</a></li>
+                                    <li><a href="#" data-i18n="nav_urban">URBAN DESIGN</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">News &amp; Events</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#contact-footer">Contacts</a></li>
+                            <li><a href="#" data-i18n="nav_services">Services</a></li>
+                            <li><a href="#" data-i18n="nav_news">News &amp; Events</a></li>
+                            <li><a href="#" data-i18n="nav_careers">Careers</a></li>
+                            <li><a href="#contact-footer" data-i18n="nav_contacts">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
 
+                <!-- Language Switcher -->
+                <div class="lang-switch" id="langToggle">
+                    <span class="lang-icon" id="langToggleText">AR</span>
+                </div>
                 <!-- Share Button -->
                 <div class="show-share" id="shareToggle">
                     <i class="fa fa-share-alt"></i>
@@ -92,9 +96,9 @@
                                 <div class="overlay"></div>
                                 <div class="bg" style="background-image: url('images/hero1.png')"></div>
                                 <div class="hero-wrap-item center-item">
-                                    <h3>Distinctive</h3>
-                                    <h2>Architecture Design</h2>
-                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                    <h3 data-i18n="hero_dist">Distinctive</h3>
+                                    <h2 data-i18n="hero_arch">Architecture Design</h2>
+                                    <a href="#sec3" class="hero-link" data-i18n="hero_port">Our Portfolio</a>
                                 </div>
                             </div>
                             <!-- Slide 2 -->
@@ -102,9 +106,9 @@
                                 <div class="overlay"></div>
                                 <div class="bg" style="background-image: url('images/hero2.png')"></div>
                                 <div class="hero-wrap-item center-item">
-                                    <h3>unique &amp; memorable</h3>
-                                    <h2>spaces</h2>
-                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                    <h3 data-i18n="hero_uniq">unique &amp; memorable</h3>
+                                    <h2 data-i18n="hero_space">spaces</h2>
+                                    <a href="#sec3" class="hero-link" data-i18n="hero_port">Our Portfolio</a>
                                 </div>
                             </div>
                             <!-- Slide 3 -->
@@ -112,9 +116,9 @@
                                 <div class="overlay"></div>
                                 <div class="bg" style="background-image: url('images/hero3.png')"></div>
                                 <div class="hero-wrap-item center-item">
-                                    <h3>the highest standards of</h3>
-                                    <h2>excellence</h2>
-                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                    <h3 data-i18n="hero_high">the highest standards of</h3>
+                                    <h2 data-i18n="hero_excel">excellence</h2>
+                                    <a href="#sec3" class="hero-link" data-i18n="hero_port">Our Portfolio</a>
                                 </div>
                             </div>
                             <!-- Slide 4 -->
@@ -122,9 +126,9 @@
                                 <div class="overlay"></div>
                                 <div class="bg" style="background-image: url('images/hero4.png')"></div>
                                 <div class="hero-wrap-item center-item">
-                                    <h3>contemplative</h3>
-                                    <h2>interiors</h2>
-                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                    <h3 data-i18n="hero_contemp">contemplative</h3>
+                                    <h2 data-i18n="hero_interiors">interiors</h2>
+                                    <a href="#sec3" class="hero-link" data-i18n="hero_port">Our Portfolio</a>
                                 </div>
                             </div>
                             <!-- Slide 5 -->
@@ -132,9 +136,9 @@
                                 <div class="overlay"></div>
                                 <div class="bg" style="background-image: url('images/hero5.png')"></div>
                                 <div class="hero-wrap-item center-item">
-                                    <h3>when your dream</h3>
-                                    <h2>come true</h2>
-                                    <a href="#sec3" class="hero-link">Our Portfolio</a>
+                                    <h3 data-i18n="hero_dream">when your dream</h3>
+                                    <h2 data-i18n="hero_true">come true</h2>
+                                    <a href="#sec3" class="hero-link" data-i18n="hero_port">Our Portfolio</a>
                                 </div>
                             </div>
                         </div>
@@ -173,21 +177,21 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="wpb_wrapper">
-                                        <h2 class="section-title">Our <strong>Vision</strong></h2>
-                                        <p class="no-rep">We, at M.T Architects, believe that architecture of any type or scale should generate through public experience, whether they work or live in them, visit them, or even if they just encounter them in passing. So, for us every project is a new challenge that we approach from that vision in order to discover the most distinguished &amp; optimum solutions. Our greatest satisfaction comes from designing buildings and spaces that are memorable, unique &amp; leaves a true impact upon those who uses them.</p>
-                                        <p class="no-rep">Involving our clients in the design process allows us to explore and define their needs in order to form them in creative yet practical solutions. We pride ourselves on offering our clients certainty and confidence in combining aesthetic and operational requirements to create the harmonious complete results that they expect. And we always seek to achieve the highest standards of excellence in interior &amp; exterior implementation.</p>
+                                        <h2 class="section-title" data-i18n="sec_vision">Our <strong>Vision</strong></h2>
+                                        <p class="no-rep"><span data-i18n="vis_p1">We, at M.T Architects, believe that architecture of any type or scale should generate through public experience, whether they work or live in them, visit them, or even if they just encounter them in passing. So, for us every project is a new challenge that we approach from that vision in order to discover the most distinguished &amp; optimum solutions. Our greatest satisfaction comes from designing buildings and spaces that are memorable, unique &amp; leaves a true impact upon those who uses them.</span></p>
+                                        <p class="no-rep"><span data-i18n="vis_p2">Involving our clients in the design process allows us to explore and define their needs in order to form them in creative yet practical solutions. We pride ourselves on offering our clients certainty and confidence in combining aesthetic and operational requirements to create the harmonious complete results that they expect. And we always seek to achieve the highest standards of excellence in interior &amp; exterior implementation.</span></p>
 
                                         <div class="process-box">
-                                            <h3>Our process</h3>
+                                            <h3 data-i18n="vis_proc">Our process</h3>
                                             <ul class="creat-list">
-                                                <li><a href="#">Idea &amp; Start</a></li>
-                                                <li><a href="#">Design &amp; Create</a></li>
-                                                <li><a href="#">Build &amp; Finish</a></li>
+                                                <li><a href="#" data-i18n="proc_1">Idea &amp; Start</a></li>
+                                                <li><a href="#" data-i18n="proc_2">Design &amp; Create</a></li>
+                                                <li><a href="#" data-i18n="proc_3">Build &amp; Finish</a></li>
                                             </ul>
                                         </div>
                                         <div>
                                             <a class="btn anim-button fl-l" href="#sec3">
-                                                <span class="no-rep">View Our portfolio</span>
+                                                <span class="no-rep" data-i18n="btn_view_port">View Our portfolio</span>
                                                 <i class="fa fa-long-arrow-right"></i>
                                             </a>
                                         </div>
@@ -211,11 +215,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h2 class="section-title">Some Interesting <strong>Facts</strong></h2>
+                                    <h2 class="section-title" data-i18n="sec_facts">Some Interesting <strong>Facts</strong></h2>
                                 </div>
                                 <div class="col-md-8">
-                                    <p>More than 700 complete successful projects in Egypt &amp; abroad &hellip;. and counting.</p>
-                                    <p class="no-rep">Our team takes over everything, from an idea and concept development to realization. We believe in traditions and incorporate them into our innovations. All our projects incorporate a unique artistic image and functional solutions. The client is the soul of the project. Our main goal is to illustrate his/her values and individuality through design.</p>
+                                    <p><span data-i18n="fact_sub">More than 700 complete successful projects in Egypt &amp; abroad &hellip;. and counting.</span></p>
+                                    <p class="no-rep"><span data-i18n="fact_desc">Our team takes over everything, from an idea and concept development to realization. We believe in traditions and incorporate them into our innovations. All our projects incorporate a unique artistic image and functional solutions. The client is the soul of the project. Our main goal is to illustrate his/her values and individuality through design.</span></p>
                                 </div>
                             </div>
                             <div class="row facts-row">
@@ -227,7 +231,7 @@
                                                 <div class="num" data-target="350">0</div>
                                             </div>
                                         </div>
-                                        <h6>Residential projects</h6>
+                                        <h6 data-i18n="fact_1">Residential projects</h6>
                                     </div>
                                     <div class="inline-facts" data-parallax-y="80">
                                         <div class="milestone-counter">
@@ -235,7 +239,7 @@
                                                 <div class="num" data-target="200">0</div>
                                             </div>
                                         </div>
-                                        <h6>Commercial Projects</h6>
+                                        <h6 data-i18n="fact_2">Commercial Projects</h6>
                                     </div>
                                     <div class="inline-facts" data-parallax-y="100">
                                         <div class="milestone-counter">
@@ -243,7 +247,7 @@
                                                 <div class="num" data-target="222">0</div>
                                             </div>
                                         </div>
-                                        <h6>Various buildings</h6>
+                                        <h6 data-i18n="fact_3">Various buildings</h6>
                                     </div>
                                 </div>
                             </div>
@@ -259,7 +263,7 @@
                         </div>
                         <div class="container">
                             <h2 class="section-title algn-right dec-title">
-                                <span class="no-rep">Our featured <strong>Works</strong></span>
+                                <span class="no-rep" data-i18n="sec_works">Our featured <strong>Works</strong></span>
                             </h2>
 
                             <div class="portfolios_parallax-element">
@@ -270,17 +274,17 @@
                                         <div class="parallax-item left-direction">
                                             <div class="paralax-media">
                                                 <ul class="creat-list">
-                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
-                                                    <li><a href="#">INTERIOR DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_arch">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_interior">INTERIOR DESIGN</a></li>
                                                 </ul>
                                                 <div class="paralax-wrap">
                                                     <img src="images/portfolio1.png" class="respimg" alt="Caffè Vergnano" data-lightbox="true" data-title="Caffè Vergnano" data-category="Architecture & Interior Design">
-                                                </div>
+                                                <div class="image-watermark" data-i18n="img_watermark">We will insert your images here</div></div>
                                             </div>
                                             <div class="parallax-deck">
                                                 <div class="parallax-deck-item">
                                                     <h3 class="folio-title">Caffè Vergnano</h3>
-                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                    <a href="#" class="btn anim-button fl-l"><span data-i18n="btn_check">Check</span><i class="fa fa-long-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -295,16 +299,16 @@
                                         <div class="parallax-item right-direction">
                                             <div class="paralax-media">
                                                 <ul class="creat-list">
-                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_arch">ARCHITECTURE DESIGN</a></li>
                                                 </ul>
                                                 <div class="paralax-wrap">
                                                     <img src="images/portfolio2.png" class="respimg" alt="AER Mall" data-lightbox="true" data-title="AER Mall" data-category="Architecture Design">
-                                                </div>
+                                                <div class="image-watermark" data-i18n="img_watermark">We will insert your images here</div></div>
                                             </div>
                                             <div class="parallax-deck">
                                                 <div class="parallax-deck-item">
                                                     <h3 class="folio-title">AER Mall</h3>
-                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                    <a href="#" class="btn anim-button fl-l"><span data-i18n="btn_check">Check</span><i class="fa fa-long-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -317,17 +321,17 @@
                                         <div class="parallax-item left-direction">
                                             <div class="paralax-media">
                                                 <ul class="creat-list">
-                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
-                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_arch">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_landscape">LANDSCAPE DESIGN</a></li>
                                                 </ul>
                                                 <div class="paralax-wrap">
                                                     <img src="images/portfolio3.png" class="respimg" alt="Hayat Plaza" data-lightbox="true" data-title="Hayat Plaza" data-category="Architecture & Landscape Design">
-                                                </div>
+                                                <div class="image-watermark" data-i18n="img_watermark">We will insert your images here</div></div>
                                             </div>
                                             <div class="parallax-deck">
                                                 <div class="parallax-deck-item">
                                                     <h3 class="folio-title">Hayat Plaza</h3>
-                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                    <a href="#" class="btn anim-button fl-l"><span data-i18n="btn_check">Check</span><i class="fa fa-long-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -342,19 +346,19 @@
                                         <div class="parallax-item right-direction">
                                             <div class="paralax-media">
                                                 <ul class="creat-list">
-                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
-                                                    <li><a href="#">INTERIOR DESIGN</a></li>
-                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
-                                                    <li><a href="#">URBAN DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_arch">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_interior">INTERIOR DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_landscape">LANDSCAPE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_urban">URBAN DESIGN</a></li>
                                                 </ul>
                                                 <div class="paralax-wrap">
                                                     <img src="images/portfolio4.png" class="respimg" alt="Waterfall Compound" data-lightbox="true" data-title="Waterfall Compound Project" data-category="Architecture, Interior, Landscape & Urban Design">
-                                                </div>
+                                                <div class="image-watermark" data-i18n="img_watermark">We will insert your images here</div></div>
                                             </div>
                                             <div class="parallax-deck">
                                                 <div class="parallax-deck-item">
                                                     <h3 class="folio-title">Waterfall Compound Project</h3>
-                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                    <a href="#" class="btn anim-button fl-l"><span data-i18n="btn_check">Check</span><i class="fa fa-long-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -367,17 +371,17 @@
                                         <div class="parallax-item left-direction">
                                             <div class="paralax-media">
                                                 <ul class="creat-list">
-                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
-                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_arch">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_landscape">LANDSCAPE DESIGN</a></li>
                                                 </ul>
                                                 <div class="paralax-wrap">
                                                     <img src="images/portfolio5.png" class="respimg" alt="Opal Project" data-lightbox="true" data-title="Opal Project" data-category="Architecture & Landscape Design">
-                                                </div>
+                                                <div class="image-watermark" data-i18n="img_watermark">We will insert your images here</div></div>
                                             </div>
                                             <div class="parallax-deck">
                                                 <div class="parallax-deck-item">
                                                     <h3 class="folio-title">Opal Project</h3>
-                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                    <a href="#" class="btn anim-button fl-l"><span data-i18n="btn_check">Check</span><i class="fa fa-long-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -392,17 +396,17 @@
                                         <div class="parallax-item right-direction">
                                             <div class="paralax-media">
                                                 <ul class="creat-list">
-                                                    <li><a href="#">ARCHITECTURE DESIGN</a></li>
-                                                    <li><a href="#">LANDSCAPE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_arch">ARCHITECTURE DESIGN</a></li>
+                                                    <li><a href="#" data-i18n="nav_landscape">LANDSCAPE DESIGN</a></li>
                                                 </ul>
                                                 <div class="paralax-wrap">
                                                     <img src="images/portfolio6.png" class="respimg" alt="Box Park" data-lightbox="true" data-title="Box Park" data-category="Architecture & Landscape Design">
-                                                </div>
+                                                <div class="image-watermark" data-i18n="img_watermark">We will insert your images here</div></div>
                                             </div>
                                             <div class="parallax-deck">
                                                 <div class="parallax-deck-item">
                                                     <h3 class="folio-title">Box Park</h3>
-                                                    <a href="#" class="btn anim-button fl-l"><span>View Project</span><i class="fa fa-long-arrow-right"></i></a>
+                                                    <a href="#" class="btn anim-button fl-l"><span data-i18n="btn_check">Check</span><i class="fa fa-long-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -411,7 +415,7 @@
 
                                 <!-- View All Projects -->
                                 <div class="custom-link-holder">
-                                    <a href="#" class="btn anim-button"><span>View All Projects</span><i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="#" class="btn anim-button"><span data-i18n="btn_view_all">View All Projects</span><i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -436,7 +440,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="footer-item">
-                                <h4 class="text-link">Call</h4>
+                                <h4 class="text-link" data-i18n="ft_call">Call</h4>
                                 <ul>
                                     <li><a href="tel:+20201151115111">(202) 0115 111 5111</a></li>
                                     <li><a href="tel:+20228140001">(202) 281 40001</a></li>
@@ -447,7 +451,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="footer-item">
-                                <h4 class="text-link">Write</h4>
+                                <h4 class="text-link" data-i18n="ft_write">Write</h4>
                                 <ul>
                                     <li><a href="mailto:info@m-talaat.com">info@m-talaat.com</a></li>
                                     <li><a href="mailto:mt@m-talaat.com">mt@m-talaat.com</a></li>
@@ -456,10 +460,10 @@
                         </div>
                         <div class="col-md-2">
                             <div class="footer-item">
-                                <h4 class="text-link">Visit</h4>
+                                <h4 class="text-link" data-i18n="ft_visit">Visit</h4>
                                 <ul>
-                                    <li><span>167 Northern 90st, jasmine 7, New Cairo, Egypt</span></li>
-                                    <li><a href="https://www.google.com.eg/maps/dir/30.11143,31.314129/mt+architects/@30.0643963,31.3086077,12z" target="_blank">View on map</a></li>
+                                    <li><span data-i18n="ft_addr">167 Northern 90st, jasmine 7, New Cairo, Egypt</span></li>
+                                    <li><a href="https://www.google.com.eg/maps/dir/30.11143,31.314129/mt+architects/@30.0643963,31.3086077,12z" target="_blank" data-i18n="ft_map">View on map</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -479,7 +483,7 @@
                         <div class="col-md-6">
                             <div class="footer-wrap">
                                 <span class="copyright">&copy; M.T.Architects 2025. Design by. <a href="http://inspiregraphic.com/" target="_blank">InspireGraphic</a></span>
-                                <span class="to-top" id="toTop">To Top</span>
+                                <span class="to-top" id="toTop" data-i18n="ft_top">To Top</span>
                             </div>
                         </div>
                     </div>
@@ -523,45 +527,45 @@
         <div class="inquiry-modal">
             <button class="inquiry-close" id="inquiryClose"><i class="fa fa-times"></i></button>
             <div class="inquiry-header">
-                <h3>Request a Consultation</h3>
-                <p>Fill in your details and we'll get back to you within 24 hours</p>
+                <h3 data-i18n="mod_req">Request a Consultation</h3>
+                <p data-i18n="mod_sub">Fill in your details and we'll get back to you within 24 hours</p>
             </div>
             <form class="inquiry-form" id="inquiryForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" id="inqName" placeholder="Your Name *" required>
+                        <input type="text" id="inqName" placeholder="Your Name *" data-i18n="mod_name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="inqEmail" placeholder="Your Email *" required>
+                        <input type="email" id="inqEmail" placeholder="Your Email *" data-i18n="mod_email" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="tel" id="inqPhone" placeholder="Phone Number">
+                        <input type="tel" id="inqPhone" placeholder="Phone Number" data-i18n="mod_phone">
                     </div>
                     <div class="form-group">
                         <select id="inqService">
-                            <option value="">Select Service</option>
-                            <option value="architecture">Architecture Design</option>
+                            <option value="" data-i18n="mod_sel">Select Service</option>
+                            <option value="architecture" data-i18n="hero_arch">Architecture Design</option>
                             <option value="interior">Interior Design</option>
                             <option value="landscape">Landscape Design</option>
                             <option value="urban">Urban Design</option>
-                            <option value="consultation">General Consultation</option>
+                            <option value="consultation" data-i18n="mod_gen">General Consultation</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group full-width">
-                    <textarea id="inqMessage" placeholder="Tell us about your project..." rows="4"></textarea>
+                    <textarea id="inqMessage" placeholder="Tell us about your project..." data-i18n="mod_msg" rows="4"></textarea>
                 </div>
                 <button type="submit" class="inquiry-submit">
-                    <span>Send Request</span>
+                    <span data-i18n="mod_send">Send Request</span>
                     <i class="fa fa-long-arrow-right"></i>
                 </button>
             </form>
             <div class="inquiry-success" id="inquirySuccess" style="display:none;">
                 <i class="fa fa-check-circle"></i>
-                <h3>Thank You!</h3>
-                <p>Your consultation request has been received. Our team will contact you within 24 hours.</p>
+                <h3 data-i18n="mod_thx">Thank You!</h3>
+                <p data-i18n="mod_thx_sub">Your consultation request has been received. Our team will contact you within 24 hours.</p>
             </div>
         </div>
     </div>
@@ -573,7 +577,7 @@
             <button title="Request Consultation" id="openInquiry">
                 <i class="fa fa-calendar-check-o"></i>
             </button>
-            <span class="dock-tooltip">Book Consultation</span>
+            <span class="dock-tooltip" data-i18n="dock_book">Book Consultation</span>
         </div>
 
         <!-- WhatsApp Button -->
@@ -581,7 +585,7 @@
             <a href="https://wa.me/20201151115111?text=Hello%20MTA%2C%20I%27m%20interested%20in%20your%20architecture%20services" target="_blank" title="Chat on WhatsApp">
                 <i class="fa fa-whatsapp"></i>
             </a>
-            <span class="dock-tooltip">WhatsApp Chat</span>
+            <span class="dock-tooltip" data-i18n="dock_wa">WhatsApp Chat</span>
         </div>
 
         <!-- Chatbot Toggle Button -->
@@ -595,7 +599,7 @@
                 </div>
                 <span class="chatbot-badge" id="chatBadge">1</span>
             </div>
-            <span class="dock-tooltip">AI Assistant</span>
+            <span class="dock-tooltip" data-i18n="dock_ai">AI Assistant</span>
         </div>
     </div>
 
@@ -610,8 +614,8 @@
                     <img src="https://m-talaat.com/wp-content/uploads/2020/10/MTALogoW-2.png" alt="MTA">
                 </div>
                 <div class="chatbot-header-info">
-                    <h4>MTA Assistant</h4>
-                    <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                    <h4 data-i18n="chat_title">MTA Assistant</h4>
+                    <span class="chatbot-status"><span class="status-dot"></span data-i18n="chat_status"> Online</span>
                 </div>
                 <button class="chatbot-minimize" id="chatbotMinimize"><i class="fa fa-minus"></i></button>
             </div>
@@ -628,7 +632,7 @@
 
             <!-- Chat Input -->
             <div class="chatbot-input-area">
-                <input type="text" id="chatbotInput" placeholder="Type your message..." autocomplete="off">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." data-i18n="chat_type" autocomplete="off">
                 <button id="chatbotSend"><i class="fa fa-paper-plane"></i></button>
             </div>
         </div>

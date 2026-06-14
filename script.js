@@ -6,6 +6,182 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // ===================================================
+    // I18N TRANSLATION DICTIONARY & LOGIC
+    // ===================================================
+    window.currentLang = 'en';
+    const i18n = {
+        en: {
+            "nav_home": "Home",
+            "nav_about": "About Us",
+            "nav_projects": "Projects",
+            "nav_arch": "ARCHITECTURE DESIGN",
+            "nav_interior": "INTERIOR DESIGN",
+            "nav_landscape": "LANDSCAPE DESIGN",
+            "nav_urban": "URBAN DESIGN",
+            "nav_services": "Services",
+            "nav_news": "News & Events",
+            "nav_careers": "Careers",
+            "nav_contacts": "Contacts",
+            "hero_dist": "Distinctive",
+            "hero_arch": "Architecture Design",
+            "hero_port": "Our Portfolio",
+            "hero_uniq": "unique & memorable",
+            "hero_space": "spaces",
+            "hero_high": "the highest standards of",
+            "hero_excel": "excellence",
+            "hero_contemp": "contemplative",
+            "hero_interiors": "interiors",
+            "hero_dream": "when your dream",
+            "hero_true": "come true",
+            "sec_vision": "Our <strong>Vision</strong>",
+            "vis_p1": "We, at M.T Architects, believe that architecture of any type or scale should generate through public experience, whether they work or live in them, visit them, or even if they just encounter them in passing. So, for us every project is a new challenge that we approach from that vision in order to discover the most distinguished & optimum solutions. Our greatest satisfaction comes from designing buildings and spaces that are memorable, unique & leaves a true impact upon those who uses them.",
+            "vis_p2": "Involving our clients in the design process allows us to explore and define their needs in order to form them in creative yet practical solutions. We pride ourselves on offering our clients certainty and confidence in combining aesthetic and operational requirements to create the harmonious complete results that they expect. And we always seek to achieve the highest standards of excellence in interior & exterior implementation.",
+            "vis_proc": "Our process",
+            "proc_1": "Idea & Start",
+            "proc_2": "Design & Create",
+            "proc_3": "Build & Finish",
+            "btn_view_port": "View Our portfolio",
+            "sec_facts": "Some Interesting <strong>Facts</strong>",
+            "fact_sub": "More than 700 complete successful projects in Egypt & abroad .... and counting.",
+            "fact_desc": "Our team takes over everything, from an idea and concept development to realization. We believe in traditions and incorporate them into our innovations. All our projects incorporate a unique artistic image and functional solutions. The client is the soul of the project. Our main goal is to illustrate his/her values and individuality through design.",
+            "fact_1": "Residential projects",
+            "fact_2": "Commercial Projects",
+            "fact_3": "Various buildings",
+            "sec_works": "Our featured <strong>Works</strong>",
+            
+            "btn_check": "Check",
+            "btn_ask": "Ask",
+            "img_watermark": "We will insert your images here",
+            "btn_view_proj": "View Project",
+            "btn_view_all": "View All Projects",
+            "ft_call": "Call",
+            "ft_write": "Write",
+            "ft_visit": "Visit",
+            "ft_addr": "167 Northern 90st, jasmine 7, New Cairo, Egypt",
+            "ft_map": "View on map",
+            "ft_top": "To Top",
+            "mod_req": "Request a Consultation",
+            "mod_sub": "Fill in your details and we'll get back to you within 24 hours",
+            "mod_name": "Your Name *",
+            "mod_email": "Your Email *",
+            "mod_phone": "Phone Number",
+            "mod_sel": "Select Service",
+            "mod_gen": "General Consultation",
+            "mod_msg": "Tell us about your project...",
+            "mod_send": "Send Request",
+            "mod_thx": "Thank You!",
+            "mod_thx_sub": "Your consultation request has been received. Our team will contact you within 24 hours.",
+            "dock_book": "Book Consultation",
+            "dock_wa": "WhatsApp Chat",
+            "dock_ai": "AI Assistant",
+            "chat_title": "MTA Assistant",
+            "chat_status": "Online",
+            "chat_type": "Type your message..."
+        },
+        ar: {
+            "nav_home": "الرئيسية",
+            "nav_about": "من نحن",
+            "nav_projects": "مشاريعنا",
+            "nav_arch": "التصميم المعماري",
+            "nav_interior": "التصميم الداخلي",
+            "nav_landscape": "تنسيق الحدائق",
+            "nav_urban": "التخطيط العمراني",
+            "nav_services": "خدماتنا",
+            "nav_news": "الأخبار والفعاليات",
+            "nav_careers": "الوظائف",
+            "nav_contacts": "اتصل بنا",
+            "hero_dist": "تميز في",
+            "hero_arch": "التصميم المعماري",
+            "hero_port": "أعمالنا",
+            "hero_uniq": "مساحات فريدة",
+            "hero_space": "ولا تُنسى",
+            "hero_high": "أعلى معايير",
+            "hero_excel": "التميز",
+            "hero_contemp": "تصميمات داخلية",
+            "hero_interiors": "تأملية",
+            "hero_dream": "عندما يصبح حلمك",
+            "hero_true": "حقيقة",
+            "sec_vision": "رؤيتنا",
+            "vis_p1": "نحن في إم تي أركيتكتس نؤمن بأن الهندسة المعمارية يجب أن تولد من خلال التجربة العامة، سواء كانوا يعملون أو يعيشون فيها، أو يزورونها، أو حتى إذا صادفوها عابرين. لذلك، يمثل كل مشروع بالنسبة لنا تحديًا جديدًا نتعامل معه من تلك الرؤية من أجل اكتشاف الحلول الأكثر تميزًا والأمثل. أعظم درجات الرضا لدينا تأتي من تصميم المباني والمساحات التي لا تنسى وفريدة من نوعها وتترك أثرًا حقيقيًا على من يستخدمونها.",
+            "vis_p2": "إن إشراك عملائنا في عملية التصميم يسمح لنا باستكشاف وتحديد احتياجاتهم لتشكيلها في حلول إبداعية وعملية. نحن نفخر بتزويد عملائنا باليقين والثقة في الجمع بين المتطلبات الجمالية والتشغيلية لتحقيق النتائج المتكاملة التي يتوقعونها. ونسعى دائمًا لتحقيق أعلى معايير التميز في التنفيذ الداخلي والخارجي.",
+            "vis_proc": "عمليتنا",
+            "proc_1": "الفكرة والبدء",
+            "proc_2": "التصميم والإنشاء",
+            "proc_3": "البناء والتشطيب",
+            "btn_view_port": "شاهد أعمالنا",
+            "sec_facts": "بعض الحقائق <strong>المثيرة للاهتمام</strong>",
+            "fact_sub": "أكثر من 700 مشروع ناجح ومكتمل في مصر والخارج... والعدد في ازدياد.",
+            "fact_desc": "يتولى فريقنا كل شيء، من تطوير الفكرة والمفهوم إلى التنفيذ. نحن نؤمن بالتقاليد وندمجها في ابتكاراتنا. تتضمن جميع مشاريعنا صورة فنية فريدة وحلول وظيفية. العميل هو روح المشروع، وهدفنا الرئيسي هو توضيح قيمه وفرديته من خلال التصميم.",
+            "fact_1": "مشاريع سكنية",
+            "fact_2": "مشاريع تجارية",
+            "fact_3": "مباني متنوعة",
+            "sec_works": "أعمالنا <strong>المميزة</strong>",
+            
+            "btn_check": "عرض",
+            "btn_ask": "اسأل",
+            "img_watermark": "سيتم إدراج صورك هنا",
+            "btn_view_proj": "عرض المشروع",
+            "btn_view_all": "عرض كافة المشاريع",
+            "ft_call": "اتصل",
+            "ft_write": "راسلنا",
+            "ft_visit": "تفضل بزيارتنا",
+            "ft_addr": "١٦٧ شارع التسعين الشمالي، الياسمين ٧، القاهرة الجديدة، مصر",
+            "ft_map": "عرض على الخريطة",
+            "ft_top": "إلى الأعلى",
+            "mod_req": "طلب استشارة",
+            "mod_sub": "املأ بياناتك وسنعود إليك خلال 24 ساعة",
+            "mod_name": "اسمك *",
+            "mod_email": "بريدك الإلكتروني *",
+            "mod_phone": "رقم الهاتف",
+            "mod_sel": "اختر الخدمة",
+            "mod_gen": "استشارة عامة",
+            "mod_msg": "أخبرنا عن مشروعك...",
+            "mod_send": "إرسال الطلب",
+            "mod_thx": "شكراً لك!",
+            "mod_thx_sub": "تم استلام طلب الاستشارة الخاص بك. سيتواصل معك فريقنا خلال 24 ساعة.",
+            "dock_book": "احجز استشارة",
+            "dock_wa": "واتساب",
+            "dock_ai": "المساعد الذكي",
+            "chat_title": "مساعد MTA",
+            "chat_status": "متصل",
+            "chat_type": "اكتب رسالتك..."
+        }
+    };
+
+    function updateLanguage() {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (i18n[currentLang][key]) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = i18n[currentLang][key];
+                } else {
+                    el.innerHTML = i18n[currentLang][key];
+                }
+            }
+        });
+        
+        const langToggleText = document.getElementById('langToggleText');
+        if (currentLang === 'ar') {
+            document.body.classList.add('rtl-mode');
+            document.body.dir = 'rtl';
+            if (langToggleText) langToggleText.textContent = 'EN';
+        } else {
+            document.body.classList.remove('rtl-mode');
+            document.body.dir = 'ltr';
+            if (langToggleText) langToggleText.textContent = 'AR';
+        }
+    }
+
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            window.currentLang = window.currentLang === 'en' ? 'ar' : 'en';
+            updateLanguage();
+        });
+    }
+
+
+    // ===================================================
     // LOADER
     // ===================================================
     const loader = document.getElementById('monolit-loader');
@@ -279,169 +455,146 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let chatOpen = false;
 
+    
     // ---- KNOWLEDGE BASE ----
     const knowledgeBase = {
-        greetings: [
-            "Hello! Welcome to M.T Architects. I'm your virtual assistant. How can I help you today?",
-            "Hi there! I'm the MTA Assistant. Feel free to ask me anything about our architecture and design services!",
-            "Welcome! I'm here to help you explore M.T Architects' services and portfolio. What would you like to know?"
-        ],
-
+        greetings: {
+            en: ["Hello! Welcome to M.T Architects. I'm your virtual assistant. How can I help you today?", "Hi there! I'm the MTA Assistant. Feel free to ask me anything about our architecture and design services!"],
+            ar: ["مرحباً! أهلاً بك في إم تي أركيتكتس. أنا مساعدك الافتراضي، كيف يمكنني مساعدتك اليوم؟", "أهلاً بك! أنا مساعد MTA. لا تتردد في سؤالي عن أي شيء يخص خدماتنا في التصميم المعماري!"]
+        },
         responses: {
-            // ===== ABOUT THE COMPANY =====
             "about|who are you|company|mta|m.t architects|tell me about": {
-                answer: "**M.T Architects (MTA)** is a leading architecture and design firm based in **New Cairo, Egypt**, with international presence in **Saudi Arabia**.\n\nFounded by **Architect Mohamed Talaat**, we've successfully completed over **700 projects** across Egypt and abroad. We specialize in creating distinctive, memorable spaces that leave a lasting impact on everyone who experiences them.\n\nOur philosophy is that great architecture should generate meaningful public experiences, whether people work, live, or simply pass through our designs.",
-                quickReplies: ["Our Services", "View Projects", "Contact Info", "Our Process"]
+                en: {
+                    answer: "**M.T Architects (MTA)** is a leading architecture and design firm based in **New Cairo, Egypt**, with international presence in **Saudi Arabia**.\n\nFounded by **Architect Mohamed Talaat**, we've successfully completed over **700 projects** across Egypt and abroad.",
+                    quickReplies: ["Our Services", "View Projects", "Contact Info"]
+                },
+                ar: {
+                    answer: "**إم تي أركيتكتس (MTA)** هي شركة رائدة في مجال التصميم المعماري مقرها في **القاهرة الجديدة، مصر**، ولها حضور دولي في **السعودية**.\n\nتأسست على يد **المهندس محمد طلعت**، وقد أكملنا بنجاح أكثر من **700 مشروع** في مصر والخارج.",
+                    quickReplies: ["خدماتنا", "عرض المشاريع", "معلومات الاتصال"]
+                }
             },
-
-            // ===== SERVICES =====
             "services|what do you offer|what you do|service|offerings": {
-                answer: "We offer comprehensive design services across **four main disciplines**:\n\n🏗️ **Architecture Design** — Residential, commercial, and mixed-use buildings\n\n🏠 **Interior Design** — Luxury interiors for homes, offices, restaurants & retail\n\n🌳 **Landscape Design** — Gardens, outdoor spaces, compound landscaping\n\n🏙️ **Urban Design** — Master planning, urban development, community design\n\nFrom concept to completion, our team handles every phase — **idea development, design, construction documentation, and project supervision**.",
-                quickReplies: ["Architecture Design", "Interior Design", "Landscape Design", "Request Consultation"]
+                en: {
+                    answer: "We offer comprehensive design services across **four main disciplines**:\n\n🏗️ **Architecture Design**\n🏠 **Interior Design**\n🌳 **Landscape Design**\n🏙️ **Urban Design**",
+                    quickReplies: ["Architecture Design", "Interior Design", "Request Consultation"]
+                },
+                ar: {
+                    answer: "نحن نقدم خدمات تصميم شاملة عبر **أربعة تخصصات رئيسية**:\n\n🏗️ **التصميم المعماري**\n🏠 **التصميم الداخلي**\n🌳 **تنسيق الحدائق**\n🏙️ **التخطيط العمراني**",
+                    quickReplies: ["التصميم المعماري", "التصميم الداخلي", "طلب استشارة"]
+                }
             },
-
-            "architecture design|architectural": {
-                answer: "Our **Architecture Design** service covers the full spectrum:\n\n• **Residential** — Villas, apartments, residential compounds\n• **Commercial** — Shopping malls, office buildings, hotels\n• **Mixed-Use** — Combined commercial & residential developments\n• **Institutional** — Educational & healthcare facilities\n\nWe've completed **350+ residential** and **200+ commercial** projects. Each design prioritizes distinctive aesthetics, functionality, and the client's unique vision.\n\nNotable projects include **AER Mall**, **Hayat Plaza**, and the **Waterfall Compound Project**.",
-                quickReplies: ["Interior Design", "View Projects", "Request Consultation"]
+            "caffe vergnano|cafe|coffee": {
+                en: {
+                    answer: "**Caffè Vergnano** is one of our signature projects combining **Architecture & Interior Design**.\n\nThis Italian café project showcases our ability to create warm, inviting commercial interiors that blend contemporary design with the authentic character of an Italian coffee culture.",
+                    quickReplies: ["AER Mall", "Interior Design"]
+                },
+                ar: {
+                    answer: "**كافيه فيرنيانو** هو أحد مشاريعنا المميزة التي تجمع بين **التصميم المعماري والداخلي**.\n\nيُظهر هذا المقهى الإيطالي قدرتنا على خلق تصميمات داخلية تجارية دافئة وجذابة تمزج بين التصميم المعاصر والطابع الأصيل لثقافة القهوة الإيطالية.",
+                    quickReplies: ["مول AER", "التصميم الداخلي"]
+                }
             },
-
-            "interior design|interior|interiors": {
-                answer: "Our **Interior Design** services create contemplative, unique spaces:\n\n• **Residential Interiors** — Living spaces, bedrooms, kitchens\n• **Commercial Interiors** — Restaurants, cafes, retail stores, offices\n• **Hospitality** — Hotel lobbies, suites, and public areas\n• **Custom Furniture** — Bespoke furniture design and procurement\n\nWe believe interiors should reflect the personality and values of those who use them. Our project **Caffè Vergnano** showcases our expertise in commercial interior design.\n\nEvery interior project integrates aesthetics with practical, operational needs.",
-                quickReplies: ["Landscape Design", "View Projects", "Our Process"]
-            },
-
-            "landscape design|landscape|garden|outdoor": {
-                answer: "Our **Landscape Design** services include:\n\n• **Residential Gardens** — Private gardens and outdoor living spaces\n• **Compound Landscaping** — Community green spaces and parks\n• **Commercial Landscapes** — Plaza gardens, corporate campuses\n• **Hardscape & Softscape** — Pathways, water features, planting design\n\nProjects like **Hayat Plaza**, **Opal Project**, and **Box Park** demonstrate our capability in integrating landscape with architecture seamlessly.",
-                quickReplies: ["Urban Design", "Architecture Design", "Contact Us"]
-            },
-
-            "urban design|urban|master plan|planning|city": {
-                answer: "Our **Urban Design** services focus on creating livable, sustainable communities:\n\n• **Master Planning** — Large-scale community and district planning\n• **Mixed-Use Developments** — Integrated live-work-play environments\n• **Compound Design** — Gated communities with complete amenities\n• **Sustainable Design** — Green building practices and eco-friendly solutions\n\nThe **Waterfall Compound Project** is an excellent example of our comprehensive urban design approach, integrating architecture, interiors, landscape, and urban planning in one cohesive vision.",
-                quickReplies: ["Our Services", "View Projects", "Request Consultation"]
-            },
-
-            // ===== PORTFOLIO / PROJECTS =====
-            "projects|portfolio|work|works|featured|show me": {
-                answer: "Here are some of our **featured projects**:\n\n☕ **Caffè Vergnano** — Architecture & Interior Design\n🏬 **AER Mall** — Architecture Design\n🏢 **Hayat Plaza** — Architecture & Landscape Design\n🏘️ **Waterfall Compound** — Full-service (Architecture, Interior, Landscape & Urban)\n🌿 **Opal Project** — Architecture & Landscape Design\n🎪 **Box Park** — Architecture & Landscape Design\n\nWe've completed **700+ successful projects** across residential (350+), commercial (200+), and various other building types (222+).\n\nWould you like details on any specific project?",
-                quickReplies: ["Caffè Vergnano", "AER Mall", "Waterfall Compound", "View All Projects"]
-            },
-
-            "caffe vergnano|cafe|coffee|restaurant": {
-                answer: "**Caffè Vergnano** is one of our signature projects combining **Architecture & Interior Design**.\n\nThis Italian café project showcases our ability to create warm, inviting commercial interiors that blend contemporary design with the authentic character of an Italian coffee culture. The design features:\n\n• Warm material palette — wood, metal, and stone\n• Custom lighting design\n• Elegant seating arrangements\n• Brand-integrated architectural elements\n\nThis project demonstrates our expertise in hospitality and F&B interior design.",
-                quickReplies: ["AER Mall", "Other Projects", "Interior Design"]
-            },
-
             "aer mall|mall|shopping": {
-                answer: "**AER Mall** is a striking **Architecture Design** project showcasing our commercial expertise.\n\nKey features:\n• Contemporary glass and steel facade\n• Dramatic geometric design elements\n• Energy-efficient building systems\n• Modern retail space planning\n• Impressive evening lighting design\n\nThis project exemplifies our capability in large-scale commercial architecture, creating spaces that are both visually stunning and commercially functional.",
-                quickReplies: ["Hayat Plaza", "Other Projects", "Architecture Design"]
+                en: {
+                    answer: "**AER Mall** is a striking **Architecture Design** project showcasing our commercial expertise.\n\nKey features include contemporary glass and steel facades, energy-efficient building systems, and impressive evening lighting design.",
+                    quickReplies: ["Hayat Plaza", "Architecture Design"]
+                },
+                ar: {
+                    answer: "**مول AER** هو مشروع **تصميم معماري** مذهل يعرض خبراتنا التجارية.\n\nتشمل الميزات الرئيسية واجهات زجاجية وفولاذية معاصرة، وأنظمة بناء موفرة للطاقة، وتصميم إضاءة مسائية مبهر.",
+                    quickReplies: ["حياة بلازا", "التصميم المعماري"]
+                }
             },
-
             "hayat plaza|plaza": {
-                answer: "**Hayat Plaza** combines **Architecture & Landscape Design** in a mixed-use development.\n\nHighlights:\n• Modern architectural language\n• Integrated green landscaping\n• Commercial and community spaces\n• Sustainable design approach\n• Seamless indoor-outdoor transitions\n\nThis project showcases our ability to create developments where architecture and landscape work in harmony.",
-                quickReplies: ["Waterfall Compound", "Box Park", "Landscape Design"]
+                en: {
+                    answer: "**Hayat Plaza** combines **Architecture & Landscape Design** in a mixed-use development.\n\nThis project showcases our ability to create developments where modern architecture and green landscape work in harmony.",
+                    quickReplies: ["Waterfall Compound", "Landscape Design"]
+                },
+                ar: {
+                    answer: "**حياة بلازا** يجمع بين **التصميم المعماري وتنسيق الحدائق** في تطوير متعدد الاستخدامات.\n\nيُظهر هذا المشروع قدرتنا على خلق تطورات تتناغم فيها العمارة الحديثة والمناظر الطبيعية الخضراء.",
+                    quickReplies: ["كمبوند الشلالات", "تنسيق الحدائق"]
+                }
             },
-
             "waterfall compound|waterfall|compound": {
-                answer: "**Waterfall Compound Project** is our most comprehensive project, spanning all **four design disciplines**:\n\n🏗️ Architecture Design\n🏠 Interior Design\n🌳 Landscape Design\n🏙️ Urban Design\n\nThis luxury residential compound features:\n• Master-planned gated community\n• Multiple villa types and designs\n• Swimming pools and water features\n• Comprehensive green spaces and parks\n• Community amenities and facilities\n\nIt represents the pinnacle of our integrated design approach.",
-                quickReplies: ["Opal Project", "Our Process", "Request Consultation"]
+                en: {
+                    answer: "**Waterfall Compound Project** is our most comprehensive project, spanning all **four design disciplines** (Architecture, Interior, Landscape, Urban Design).\n\nThis luxury residential compound features master-planned gated community, multiple villa types, and comprehensive green spaces.",
+                    quickReplies: ["Opal Project", "Request Consultation"]
+                },
+                ar: {
+                    answer: "**مشروع كمبوند الشلالات** هو مشروعنا الأكثر شمولاً، حيث يمتد عبر **تخصصات التصميم الأربعة** (المعماري، الداخلي، الحدائق، العمراني).\n\nيتميز هذا المجمع السكني الفاخر بمجتمع مسور مخطط بشكل متكامل، وأنواع متعددة من الفيلات، ومساحات خضراء شاملة.",
+                    quickReplies: ["مشروع أوبال", "طلب استشارة"]
+                }
             },
-
             "opal|opal project": {
-                answer: "**Opal Project** showcases our **Architecture & Landscape Design** expertise in residential development.\n\nFeatures:\n• Contemporary apartment buildings\n• Extensive green park areas\n• Sustainable urban planning\n• Modern architectural aesthetics\n• Integrated landscape design\n\nThis project demonstrates our commitment to creating residential communities that balance modern living with nature.",
-                quickReplies: ["Box Park", "Other Projects", "Contact Us"]
+                en: {
+                    answer: "**Opal Project** showcases our **Architecture & Landscape Design** expertise in residential development.\n\nIt features contemporary apartment buildings, extensive green park areas, and sustainable urban planning.",
+                    quickReplies: ["Box Park", "Architecture Design"]
+                },
+                ar: {
+                    answer: "**مشروع أوبال** يعرض خبراتنا في **التصميم المعماري وتنسيق الحدائق** في التطوير السكني.\n\nيتميز بمباني سكنية معاصرة، ومناطق حدائق خضراء واسعة، وتخطيط حضري مستدام.",
+                    quickReplies: ["بوكس بارك", "التصميم المعماري"]
+                }
             },
-
             "box park|boxpark": {
-                answer: "**Box Park** is a creative **Architecture & Landscape Design** project.\n\nThis innovative commercial development features:\n• Creative container-based commercial architecture\n• Colorful, dynamic evening lighting\n• Integrated landscape and public spaces\n• Unique retail and entertainment zones\n• Modern urban gathering space design\n\nBox Park showcases our ability to think outside conventional design, creating vibrant community destinations.",
-                quickReplies: ["Other Projects", "Our Services", "Contact Us"]
+                en: {
+                    answer: "**Box Park** is a creative **Architecture & Landscape Design** project.\n\nThis innovative commercial development features creative container-based architecture, colorful dynamic lighting, and integrated public spaces.",
+                    quickReplies: ["Our Services", "Contact Us"]
+                },
+                ar: {
+                    answer: "**بوكس بارك** هو مشروع إبداعي يجمع بين **التصميم المعماري وتنسيق الحدائق**.\n\nيتميز هذا التطور التجاري المبتكر بهندسة معمارية إبداعية تعتمد على الحاويات، وإضاءة ديناميكية ملونة، ومساحات عامة متكاملة.",
+                    quickReplies: ["خدماتنا", "اتصل بنا"]
+                }
             },
-
-            // ===== PROCESS =====
-            "process|how do you work|workflow|phases|steps|methodology": {
-                answer: "Our **design process** follows three key phases:\n\n**1️⃣ Idea & Start**\n• Client consultation and needs analysis\n• Site evaluation and feasibility studies\n• Concept development and initial sketches\n• Budget estimation\n\n**2️⃣ Design & Create**\n• Detailed architectural drawings\n• 3D visualization and renders\n• Material selection and specifications\n• Engineering coordination\n• Client review and revisions\n\n**3️⃣ Build & Finish**\n• Construction documentation\n• Contractor coordination\n• Site supervision\n• Quality assurance\n• Final handover\n\nThroughout every phase, we involve our clients to ensure the result matches their vision perfectly.",
-                quickReplies: ["Our Services", "Request Consultation", "Timeline"]
-            },
-
-            // ===== CONTACT =====
-            "contact|reach|phone|call|email|address|location|where|office|visit": {
-                answer: "You can reach **M.T Architects** through:\n\n📞 **Phone:**\n• (202) 0115 111 5111\n• (202) 281 40001\n• (202) 281 40210\n• (966) 50 702 7111 (Saudi Arabia)\n\n📧 **Email:**\n• info@m-talaat.com\n• mt@m-talaat.com\n\n📍 **Office Address:**\n167 Northern 90th Street, Jasmine 7\nNew Cairo, Egypt\n\n🌐 **Social Media:**\n• Facebook, LinkedIn, Instagram & YouTube\n\nWould you like to schedule a consultation?",
-                quickReplies: ["Request Consultation", "View on Map", "Our Services"]
-            },
-
-            // ===== CONSULTATION =====
-            "consultation|consult|meeting|appointment|schedule|book": {
-                answer: "We'd love to discuss your project! Here's how to get a **free consultation**:\n\n1️⃣ **Click the 📅 button** on the right side of the screen to fill out a quick inquiry form\n\n2️⃣ **Call us directly** at (202) 0115 111 5111\n\n3️⃣ **Email us** at info@m-talaat.com with your project details\n\n4️⃣ **WhatsApp** — Click the green button to chat instantly\n\n5️⃣ **Visit our office** at 167 Northern 90th Street, New Cairo\n\nOur team typically responds within **24 hours** for form submissions.",
-                quickReplies: ["Contact Info", "Our Services", "Our Process"]
-            },
-
-            // ===== PRICING =====
-            "price|pricing|cost|how much|budget|fee|fees|charges|rate": {
-                answer: "Our pricing depends on several factors:\n\n• **Project type** (residential, commercial, mixed-use)\n• **Project scale** (area in square meters)\n• **Scope of services** (design only vs. full service)\n• **Design complexity** and special requirements\n• **Timeline** and delivery schedule\n\nWe offer **competitive pricing** and can work within various budget ranges. Each project receives a **customized quotation** after our initial consultation.\n\n💡 **Tip:** The best way to get accurate pricing is to schedule a free consultation where we can discuss your specific needs.\n\nWould you like to request a consultation?",
-                quickReplies: ["Request Consultation", "Our Process", "Contact Us"]
-            },
-
-            // ===== TIMELINE =====
-            "timeline|how long|duration|time|when|delivery|deadline": {
-                answer: "Project timelines vary based on scope and complexity:\n\n⏱️ **Typical Timelines:**\n• **Small residential interior** — 2-4 months\n• **Villa design** — 3-6 months\n• **Commercial building** — 6-12 months\n• **Compound / Master plan** — 12-24 months\n\nThese include design phases only. Construction timelines are additional and depend on the contractor and project scale.\n\nWe pride ourselves on meeting deadlines while maintaining the highest quality standards. Would you like to discuss your specific project timeline?",
-                quickReplies: ["Our Process", "Request Consultation", "Our Services"]
-            },
-
-            // ===== CAREERS =====
-            "career|careers|job|jobs|hiring|work with you|join|employment|vacancy|vacancies": {
-                answer: "We're always looking for talented individuals to join the **MTA team**! 🏢\n\nCommon positions we hire for:\n• **Architects** (Senior & Junior)\n• **Interior Designers**\n• **Landscape Architects**\n• **3D Visualization Artists**\n• **BIM Specialists**\n• **Project Managers**\n• **Site Engineers**\n\nTo apply, send your **CV and portfolio** to:\n📧 **info@m-talaat.com**\n\nMention the position you're applying for in the subject line. We review applications regularly.",
-                quickReplies: ["About MTA", "Contact Info", "Our Services"]
-            },
-
-            // ===== EXPERIENCE =====
-            "experience|years|established|history|track record|how long in business": {
-                answer: "M.T Architects has an impressive **track record**:\n\n📊 **By the Numbers:**\n• **700+** total completed projects\n• **350+** residential projects\n• **200+** commercial projects\n• **222+** various building types\n\n🌍 **Geographic Reach:**\n• Headquarters in **New Cairo, Egypt**\n• Active office in **Saudi Arabia**\n• Projects completed internationally\n\nOur experience spans the full range of architecture and design, from intimate residential interiors to large-scale urban master plans. This depth of experience ensures every project benefits from our accumulated knowledge and expertise.",
-                quickReplies: ["View Projects", "Our Services", "About MTA"]
-            },
-
-            // ===== VISION & PHILOSOPHY =====
-            "vision|philosophy|approach|believe|values|mission": {
-                answer: "Our **vision** is rooted in a simple but powerful belief:\n\n> *\"Architecture of any type or scale should generate meaningful experiences for everyone who encounters it.\"*\n\n🎯 **Our Core Values:**\n\n• **Client-Centered** — The client is the soul of every project\n• **Distinctive Design** — Every project is unique, never cookie-cutter\n• **Excellence** — We pursue the highest standards in every detail\n• **Innovation** — Blending tradition with contemporary innovation\n• **Collaboration** — Involving clients in the creative process\n\nOur greatest satisfaction comes from designing spaces that are **memorable, unique, and leave a true impact** on those who use them.",
-                quickReplies: ["Our Process", "Our Services", "View Projects"]
-            },
-
-            // ===== SAUDI ARABIA =====
-            "saudi|saudi arabia|ksa|riyadh|jeddah|international": {
-                answer: "Yes! We have an **active presence in Saudi Arabia** 🇸🇦\n\n📞 **KSA Contact:** (966) 50 702 7111\n\nWe serve clients across the Kingdom with the same level of excellence and attention to detail that we bring to our Egypt-based projects.\n\nOur Saudi operations cover all our service areas — Architecture, Interior, Landscape, and Urban Design.\n\nWould you like to discuss a project in Saudi Arabia?",
-                quickReplies: ["Contact Info", "Our Services", "Request Consultation"]
-            },
-
-            // ===== SUSTAINABILITY =====
-            "sustainable|green|eco|environment|energy|leed": {
-                answer: "Sustainability is integrated into our design approach:\n\n🌿 **Our Sustainable Practices:**\n• Energy-efficient building design\n• Natural ventilation and daylighting optimization\n• Sustainable material selection\n• Water-efficient landscaping\n• Green space integration in all projects\n• Local material sourcing when possible\n\nWe believe that great architecture must be responsible architecture. Our designs balance aesthetic excellence with environmental consciousness.",
-                quickReplies: ["Our Services", "Landscape Design", "Urban Design"]
-            },
-
-            // ===== THANKS =====
-            "thank|thanks|thank you|thx|appreciate": {
-                answer: "You're very welcome! 😊 It's been a pleasure assisting you.\n\nRemember, you can always:\n• 📅 Book a consultation using the button on screen\n• 💬 Chat with us on WhatsApp\n• 📞 Call us at (202) 0115 111 5111\n\nWe look forward to helping you bring your architectural vision to life! 🏗️",
-                quickReplies: ["Our Services", "Contact Info", "View Projects"]
-            },
-
-            // ===== BYE =====
-            "bye|goodbye|see you|good night|later": {
-                answer: "Goodbye! Thank you for visiting M.T Architects. 👋\n\nWe're here whenever you need us. Don't hesitate to reach out when you're ready to start your project!\n\n*\"Every great building begins with a conversation.\"*\n\nHave a wonderful day! 🌟",
-                quickReplies: ["Contact Info", "Our Services"]
-            },
-
-            // ===== DEFAULT (no match) =====
             "__default__": {
-                answer: "Thank you for your message! While I may not have the specific information you're looking for, I can help you with:\n\n• 🏗️ Our **services** (Architecture, Interior, Landscape, Urban Design)\n• 📁 Our **project portfolio** and featured works\n• 📞 **Contact information** and office details\n• 💼 **Career opportunities**\n• 📋 Our **design process**\n• 💰 **Pricing** information\n• 📅 **Scheduling** a consultation\n\nFeel free to ask about any of these topics, or click one of the quick reply buttons below!",
-                quickReplies: ["Our Services", "View Projects", "Contact Info", "Request Consultation"]
+                en: {
+                    answer: "Thank you for your message! I can help you with:\n• 🏗️ Our **services**\n• 📁 Our **portfolio**\n• 📞 **Contact info**\n• 📋 Our **design process**\n\nFeel free to ask about any of these topics!",
+                    quickReplies: ["Our Services", "View Projects", "Contact Info"]
+                },
+                ar: {
+                    answer: "شكراً لرسالتك! يمكنني مساعدتك في:\n• 🏗️ **خدماتنا**\n• 📁 **أعمالنا**\n• 📞 **معلومات الاتصال**\n• 📋 **عملية التصميم لدينا**\n\nلا تتردد في السؤال عن أي من هذه المواضيع!",
+                    quickReplies: ["خدماتنا", "عرض المشاريع", "معلومات الاتصال"]
+                }
             }
         }
     };
 
     // ---- CHATBOT FUNCTIONS ----
+    window.askAbout = function(projectName) {
+        if(!chatOpen) {
+            chatToggle.click();
+        }
+        setTimeout(() => {
+            handleUserMessage(projectName);
+        }, 800);
+    };
+
     function getTimeString() {
         return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     }
 
-    function addMessage(text, sender, animate = true) {
+    // Translation function
+    window.translateChat = function(btn, engText, arText) {
+        const bubble = btn.closest('.chat-bubble').querySelector('.chat-text-content');
+        const isCurrentlyArabic = btn.dataset.lang === 'ar';
+        if (isCurrentlyArabic) {
+            bubble.innerHTML = parseMarkdown(engText);
+            btn.textContent = window.currentLang === 'ar' ? 'Translate to Arabic' : 'Translate to Arabic';
+            btn.dataset.lang = 'en';
+            btn.style.display = 'none'; // Only allow translate to Arabic for now as per requirements
+        } else {
+            bubble.innerHTML = parseMarkdown(arText);
+            btn.textContent = window.currentLang === 'ar' ? 'Translate to English' : 'Translate to English';
+            btn.dataset.lang = 'ar';
+        }
+    }
+
+    function parseMarkdown(text) {
+        return text
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/> (.*?)$/gm, '<blockquote style="border-left:2px solid #c19b76;padding-left:10px;margin:6px 0;color:rgba(255,255,255,0.6);font-style:italic;">$1</blockquote>')
+            .replace(/\n/g, '<br>');
+    }
+
+    function addMessage(text, sender, isBotResponse = false, rawEn = '', rawAr = '') {
         const msgDiv = document.createElement('div');
         msgDiv.className = `chat-message ${sender}`;
 
@@ -452,14 +605,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const bubble = document.createElement('div');
         bubble.className = 'chat-bubble';
 
-        // Parse markdown-like formatting
-        let html = text
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            .replace(/> (.*?)$/gm, '<blockquote style="border-left:2px solid #c19b76;padding-left:10px;margin:6px 0;color:rgba(255,255,255,0.6);font-style:italic;">$1</blockquote>')
-            .replace(/\n/g, '<br>');
-
-        bubble.innerHTML = html;
+        const textContent = document.createElement('div');
+        textContent.className = 'chat-text-content';
+        bubble.appendChild(textContent);
 
         const time = document.createElement('span');
         time.className = 'chat-time';
@@ -468,11 +616,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
         msgDiv.appendChild(avatar);
         msgDiv.appendChild(bubble);
-
-        if (animate) msgDiv.style.animation = 'messageIn 0.3s ease';
-
         chatBody.appendChild(msgDiv);
-        chatBody.scrollTop = chatBody.scrollHeight;
+
+        if (sender === 'bot') {
+            // Typing effect
+            let i = 0;
+            const parsedHTML = parseMarkdown(text);
+            // Quick typing for HTML (not perfect char-by-char for tags, but simulates flow by dumping)
+            // For a true typing effect, we'll just set it all at once with a fade, or simulate it.
+            // Let's do a simple interval based typing effect for plain text, or just inject HTML in chunks.
+            // To prevent breaking HTML tags, we'll use a fast timeout and set innerHTML directly after typing finishes.
+            // But the user requested a standard typing effect.
+            
+            // Simplified Typing Effect
+            textContent.innerHTML = '';
+            let currentText = '';
+            let charIndex = 0;
+            let tempDiv = document.createElement('div');
+            tempDiv.innerHTML = parsedHTML;
+            let fullText = tempDiv.textContent; // Plain text length
+            
+            // To make it look like typing without breaking HTML, we can gradually reveal opacity, or just use innerHTML with a fast delay.
+            // Let's use a character slicing approach over the raw text if no HTML, but we have HTML.
+            // Best approach: Just reveal it character by character over the innerHTML string very fast, but ensuring tags don't break.
+            // Easier: just type it out, but if it encounters '<', skip to '>'.
+            
+            const typeWriter = setInterval(() => {
+                if (charIndex < parsedHTML.length) {
+                    if (parsedHTML[charIndex] === '<') {
+                        let tagEnd = parsedHTML.indexOf('>', charIndex);
+                        if (tagEnd !== -1) {
+                            currentText += parsedHTML.substring(charIndex, tagEnd + 1);
+                            charIndex = tagEnd + 1;
+                        }
+                    } else {
+                        currentText += parsedHTML[charIndex];
+                        charIndex++;
+                    }
+                    textContent.innerHTML = currentText;
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                } else {
+                    clearInterval(typeWriter);
+                    // Add translate button after typing finishes
+                    if (isBotResponse && window.currentLang === 'en' && rawAr) {
+                        const tBtn = document.createElement('button');
+                        tBtn.className = 'chat-translate-btn';
+                        tBtn.textContent = 'Translate to Arabic';
+                        tBtn.dataset.lang = 'en';
+                        tBtn.onclick = function() { window.translateChat(this, rawEn, rawAr); };
+                        bubble.appendChild(tBtn);
+                    }
+                }
+            }, 10); // 10ms per char
+            
+        } else {
+            textContent.innerHTML = parseMarkdown(text);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
     }
 
     function showTyping() {
@@ -517,14 +717,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function findResponse(input) {
         const lower = input.toLowerCase().trim();
 
-        // Check greetings
-        const greetWords = ['hello', 'hi', 'hey', 'hola', 'greetings', 'good morning', 'good afternoon', 'good evening', 'assalam', 'salam', 'marhaba', 'ahlan'];
+        const greetWords = ['hello', 'hi', 'hey', 'hola', 'مرحبا', 'اهلا', 'السلام', 'مرحباً'];
         if (greetWords.some(w => lower.includes(w))) {
-            const greet = knowledgeBase.greetings[Math.floor(Math.random() * knowledgeBase.greetings.length)];
-            return { answer: greet, quickReplies: ["Our Services", "View Projects", "Contact Info", "About MTA"] };
+            const greets = knowledgeBase.greetings[window.currentLang];
+            const greet = greets[Math.floor(Math.random() * greets.length)];
+            const qr = window.currentLang === 'en' ? ["Our Services", "View Projects", "Contact Info"] : ["خدماتنا", "عرض المشاريع", "معلومات الاتصال"];
+            // We need to return raw EN and AR so translate works if needed
+            return { answer: greet, quickReplies: qr, rawEn: knowledgeBase.greetings.en[0], rawAr: knowledgeBase.greetings.ar[0] };
         }
 
-        // Search knowledge base
         let bestMatch = null;
         let bestScore = 0;
 
@@ -545,7 +746,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        return bestMatch || knowledgeBase.responses['__default__'];
+        const match = bestMatch || knowledgeBase.responses['__default__'];
+        return {
+            answer: match[window.currentLang].answer,
+            quickReplies: match[window.currentLang].quickReplies,
+            rawEn: match.en.answer,
+            rawAr: match.ar.answer
+        };
     }
 
     function handleUserMessage(text) {
@@ -558,12 +765,14 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             removeTyping();
             const response = findResponse(text);
-            addMessage(response.answer, 'bot');
-            setQuickReplies(response.quickReplies);
+            addMessage(response.answer, 'bot', true, response.rawEn, response.rawAr);
+            // Delay quick replies until typing is somewhat done
+            setTimeout(() => {
+                setQuickReplies(response.quickReplies);
+            }, response.answer.length * 10 + 200);
         }, delay);
     }
-
-    // ---- CHATBOT EVENT HANDLERS ----
+// ---- CHATBOT EVENT HANDLERS ----
     chatToggle.addEventListener('click', () => {
         chatOpen = !chatOpen;
         chatWindow.classList.toggle('open', chatOpen);
@@ -573,9 +782,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (chatOpen && chatBody.children.length === 0) {
             setTimeout(() => {
-                addMessage("Welcome to **M.T Architects**! 🏗️\n\nI'm your virtual assistant. I can help you explore our services, portfolio, and get in touch with our team.\n\nWhat would you like to know?", 'bot');
-                setQuickReplies(["Our Services", "View Projects", "About MTA", "Contact Info", "Our Process", "Careers"]);
-            }, 400);
+                
+                const qr = window.currentLang === 'en' ? ["Our Services", "View Projects", "About MTA", "Contact Info"] : ["خدماتنا", "عرض المشاريع", "من نحن", "معلومات الاتصال"];
+                const greetText = window.currentLang === 'en' ? "Welcome to **M.T Architects**! 🏗️\n\nI'm your virtual assistant. I can help you explore our services, portfolio, and get in touch with our team.\n\nWhat would you like to know?" : "مرحباً بك في **إم تي أركيتكتس**! 🏗️\n\nأنا مساعدك الافتراضي. يمكنني مساعدتك في استكشاف خدماتنا وأعمالنا والتواصل مع فريقنا.\n\nماذا تود أن تعرف؟";
+                const greetEn = "Welcome to **M.T Architects**! 🏗️\n\nI'm your virtual assistant. I can help you explore our services, portfolio, and get in touch with our team.\n\nWhat would you like to know?";
+                const greetAr = "مرحباً بك في **إم تي أركيتكتس**! 🏗️\n\nأنا مساعدك الافتراضي. يمكنني مساعدتك في استكشاف خدماتنا وأعمالنا والتواصل مع فريقنا.\n\nماذا تود أن تعرف؟";
+                
+                showTyping();
+                setTimeout(() => {
+                    removeTyping();
+                    addMessage(greetText, 'bot', true, greetEn, greetAr);
+                    setTimeout(() => setQuickReplies(qr), greetText.length * 10 + 200);
+                }, 800);
+}, 400);
         }
     });
 
