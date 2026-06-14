@@ -1722,6 +1722,10 @@ p { margin-bottom: 18px; }
    =================================================== */
 @media only screen and (max-width: 1036px) {
     .nav-button-holder { display: block; }
+    
+    .lang-switch {
+        margin-right: 60px; /* clear the absolute menu button */
+    }
 
     .nav-holder {
         position: fixed;
@@ -2098,6 +2102,16 @@ body.rtl-mode {
 .rtl-mode .lang-switch {
     margin-left: 15px;
     margin-right: 0;
+}
+@media only screen and (max-width: 1036px) {
+    .rtl-mode .lang-switch {
+        margin-left: 60px; /* clear the absolute menu button in RTL */
+        margin-right: 0;
+    }
+    .rtl-mode .nav-button-holder {
+        right: auto;
+        left: 30px;
+    }
 }
 .rtl-mode .sect-subtitle.right-align-dec {
     right: auto;
